@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@theme {
+  --color-primary: #2563EB;
+  --color-primary-hover: #1d4ed8;
+  --color-background-light: #F3F4F6;
+  --color-background-dark: #0B0E14;
+  --color-card-dark: #151921;
+  --color-card-border: #2A303C;
+  --color-text-muted: #9CA3AF;
+
+  --font-family-display: 'Inter', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.glow-effect {
+  box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.15);
+}
