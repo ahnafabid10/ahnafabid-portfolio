@@ -1,38 +1,63 @@
-import { Compass, Layers, Gamepad2 } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { stagger, scaleIn } from '../hooks/useScrollReveal'
 
-const CARDS = [
-  {
-    Icon: Compass,
-    title: 'The Journey',
-    text: 'I started coding by hacking apart HTML templates and fell in love with the instant feedback loop of web development. From those early static sites to complex SPAs, my drive has always been curiosity and the joy of creation.',
-  },
-  {
-    Icon: Layers,
-    title: 'The Work',
-    text: 'I enjoy crafting reusable component systems, optimizing performance metrics, and obsessing over micro-interactions. Clean code, semantic HTML, and accessible design are my non-negotiables for any project.',
-  },
-  {
-    Icon: Gamepad2,
-    title: 'The Human',
-    text: "When I'm not shipping code, you can find me exploring local specialty coffee shops, gaming, or tinkering with smart home automation. I believe a balanced life fuels the best creativity.",
-  },
-]
+const BIO = `I'm Abid — a MERN Stack Developer with hands-on experience building responsive and scalable web applications using MongoDB, Express.js, React.js and Node.js. Strong problem-solving skills with a focus on writing clean, efficient and maintainable code. Passionate about learning modern web technologies and delivering user-focused solutions.`
 
 export default function AboutCards() {
   return (
-    <section className="grid md:grid-cols-3 gap-6">
-      {CARDS.map(({ Icon, title, text }) => (
-        <div
-          key={title}
-          className="bg-[#151921] p-8 rounded-2xl border border-[#2A303C] hover:border-white/40 transition-colors group"
+    <section id="about-me" className="flex flex-col gap-8">
+
+      {/* Section heading */}
+      <motion.div
+        className="flex items-center space-x-4"
+        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+        viewport={{ once: true }} transition={{ duration: 0.6 }}
+      >
+        <div className="h-px bg-gray-800 flex-grow" />
+        <h2 className="text-sm font-bold tracking-widest text-[#9CA3AF] uppercase whitespace-nowrap">About Me</h2>
+        <div className="h-px bg-gray-800 flex-grow" />
+      </motion.div>
+
+      {/* Bio */}
+      <motion.p
+        className="text-[#9CA3AF] text-base lg:text-lg leading-relaxed max-w-3xl"
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }} transition={{ duration: 0.7 }}
+      >
+        {BIO}
+      </motion.p>
+
+      {/* Tech grid */}
+      <motion.div
+        variants={stagger} initial="hidden" whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.h3
+          variants={scaleIn}
+          className="text-white font-bold text-lg mb-4"
         >
-          <div className="h-10 w-10 bg-[#0B0E14] rounded-lg flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
-            <Icon size={20} className="text-white" />
-          </div>
-          <h3 className="text-xl font-bold mb-4 text-white">{title}</h3>
-          <p className="text-[#9CA3AF] text-sm leading-relaxed">{text}</p>
-        </div>
-      ))}
+          Technologies
+        </motion.h3>
+        <motion.div className="flex flex-wrap gap-3" variants={stagger}>
+          {TECHS.map(tech => (
+            <motion.span
+              key={tech}
+              variants={scaleIn}
+              whileHover={{ scale: 1.08, borderColor: 'rgba(255,255,255,0.4)' }}
+              className="px-3 py-1.5 bg-[#151921] border border-[#2A303C] rounded-lg text-sm text-white font-mono cursor-default transition-colors"
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
+
+const TECHS = [
+  'HTML', 'CSS', 'JavaScript', 'React.js', 'React Router',
+  'Tailwind CSS', 'Next.js', 'TypeScript', 'Node.js', 'Express.js',
+  'MongoDB', 'Firebase', 'JWT', 'Stripe', 'Netlify', 'Vercel',
+  'Git', 'Figma',
+]
