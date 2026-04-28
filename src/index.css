@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @theme {
-  --color-primary: #2563EB;
-  --color-primary-hover: #1d4ed8;
-  --color-background-light: #F3F4F6;
+  --color-primary: #ffffff;
+  --color-primary-hover: #e5e5e5;
   --color-background-dark: #0B0E14;
   --color-card-dark: #151921;
   --color-card-border: #2A303C;
@@ -24,7 +23,7 @@ body {
 }
 
 .glow-effect {
-  box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 50px -10px rgba(255, 255, 255, 0.08);
 }
 
 /* Fade-in animation used by the project detail panel */
@@ -35,4 +34,11 @@ body {
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out both;
+}
+
+/* Smooth grayscale ↔ color transition for images */
+img {
+  transition-property: filter, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
