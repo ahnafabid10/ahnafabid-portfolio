@@ -4,9 +4,9 @@ import { Mail, Phone, MessageCircle, Copy, Check, ArrowRight, ExternalLink, Shar
 import { stagger, fadeUp, scaleIn } from '../hooks/useScrollReveal'
 
 const CONTACT_CARDS = [
-  { id: 'email',    Icon: Mail,          label: 'Email',    value: 'hello@ahnafabid.dev', href: 'mailto:hello@ahnafabid.dev', cta: 'Send Message', ctaIcon: ArrowRight   },
-  { id: 'phone',    Icon: Phone,         label: 'Phone',    value: '+1 (555) 123-4567',   href: null,                         cta: null,           ctaIcon: null         },
-  { id: 'whatsapp', Icon: MessageCircle, label: 'WhatsApp', value: '+1 (555) 123-4567',   href: '#',                          cta: 'Chat Now',     ctaIcon: ExternalLink },
+  { id: 'email',    Icon: Mail,          label: 'Email',    value: 'ahnafabid600@gmail.com', href: 'mailto:ahnafabid600@gmail.com', cta: 'Send Message', ctaIcon: ArrowRight   },
+  { id: 'phone',    Icon: Phone,         label: 'Phone',    value: '+880 1326 585958',        href: 'tel:+8801326585958',            cta: null,           ctaIcon: null         },
+  { id: 'whatsapp', Icon: MessageCircle, label: 'WhatsApp', value: '+880 1326 585958',        href: 'https://wa.me/8801326585958',   cta: 'Chat Now',     ctaIcon: ExternalLink },
 ]
 
 const LinkedInIcon  = () => <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -15,10 +15,10 @@ const TwitterIcon   = () => <svg className="w-5 h-5 fill-current" viewBox="0 0 2
 const DribbbleIcon  = () => <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.932-4.02 4.392-6.87zM12 22.02c-.06 0-.12-.002-.18-.003-1.082-.01-5.185-.14-7.538-4.17 2.957-.83 6.31-1.076 7.82.016.326.236.63.5.908.788-.583 2.502-1 3.37-1.01 3.37zm-5.75-2.067c2.327 3.197 5.253 2.768 6.084 2.525-.664-.997-1.066-2.022-1.32-2.912-.19-.655-.343-1.286-.46-1.87-2.673-1.823-5.83-2.028-6.61-2.05-.008.267-.015.534-.015.803 0 1.25.29 2.43.805 3.486.27-.47.88-1.577 1.516-2.096.223.18.463.344.717.493z"/></svg>
 
 const SOCIALS = [
-  { label: 'LinkedIn', Icon: LinkedInIcon },
-  { label: 'GitHub',   Icon: GitHubIcon   },
-  { label: 'Twitter',  Icon: TwitterIcon  },
-  { label: 'Dribbble', Icon: DribbbleIcon },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/ahnafabid10/' },
+  { label: 'GitHub',   Icon: GitHubIcon,   href: 'https://github.com/ahnafabid10'           },
+  { label: 'Twitter',  Icon: TwitterIcon,  href: 'https://x.com/ahnafabid03'                },
+  { label: 'Dribbble', Icon: DribbbleIcon, href: 'https://www.facebook.com/ahnafabid04'     },
 ]
 
 function ContactCard({ card }) {
@@ -63,7 +63,9 @@ function ContactCard({ card }) {
 function SocialCard({ social }) {
   return (
     <motion.a
-      href="#"
+      href={social.href}
+      target="_blank"
+      rel="noreferrer"
       variants={scaleIn}
       whileHover={{ scale: 1.04, borderColor: 'rgba(255,255,255,0.3)' }}
       className="group flex items-center gap-3 rounded-lg border border-[#2A303C] bg-[#151921] p-4 transition-colors"

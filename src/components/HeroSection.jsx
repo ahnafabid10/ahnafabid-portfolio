@@ -26,10 +26,10 @@ const FacebookIcon = () => (
 )
 
 const SOCIAL_LINKS = [
-  { Icon: LinkedInIcon, label: 'LinkedIn', href: '#' },
+  { Icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/ahnafabid10/' },
   { Icon: GitHubIcon,   label: 'GitHub',   href: 'https://github.com/ahnafabid10' },
-  { Icon: TwitterIcon,  label: 'Twitter',  href: '#' },
-  { Icon: FacebookIcon, label: 'Facebook', href: '#' },
+  { Icon: TwitterIcon,  label: 'Twitter',  href: 'https://x.com/ahnafabid03' },
+  { Icon: FacebookIcon, label: 'Facebook', href: 'https://www.facebook.com/ahnafabid04' },
 ]
 
 const ROLES = ['MERN Stack Developer', 'Problem Solver', 'Programmer']

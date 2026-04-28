@@ -5,6 +5,7 @@ import SplashScreen      from './components/SplashScreen'
 import Navbar            from './components/Navbar'
 import HeroSection       from './components/HeroSection'
 import StatsBar          from './components/StatsBar'
+import AboutCards        from './components/AboutCards'
 import EducationSection  from './components/EducationSection'
 import TechStack         from './components/TechStack'
 import ProjectsSection   from './components/ProjectsSection'
@@ -23,6 +24,7 @@ export default function App() {
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-24">
         <HeroSection />
         <StatsBar />
+        <AboutCards />
         <EducationSection />
         <TechStack />
         <ProjectsSection />
