@@ -91,7 +91,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section id="about" className="grid lg:grid-cols-2 gap-12  items-center">
+    <section id="about" className="grid lg:grid-cols-2 gap-12 items-center">
 
       {/* ── Left ── */}
       <motion.div

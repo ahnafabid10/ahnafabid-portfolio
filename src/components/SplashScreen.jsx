@@ -12,7 +12,7 @@ export default function SplashScreen({ onDone }) {
     const t = setTimeout(() => {
       setVisible(false)
       setTimeout(onDone, 700)
-    }, 3000)
+    }, 2500)
     return () => clearTimeout(t)
   }, [])
 
@@ -23,7 +23,7 @@ export default function SplashScreen({ onDone }) {
           key="splash"
           className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center"
           exit={{ y: '-100%' }}
-          transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
         >
           {/* Word-by-word stagger */}
           <div className="flex flex-wrap items-end justify-center gap-x-5 gap-y-2 px-6">
@@ -38,7 +38,7 @@ export default function SplashScreen({ onDone }) {
                   initial={{ y: '110%' }}
                   animate={{ y: 0 }}
                   transition={{
-                    duration: 0.7,
+                    duration: 0.6,
                     delay: i * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
